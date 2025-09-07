@@ -573,7 +573,7 @@ fi
 echo "Copiando el archivo $ARCHIVO_TXZ desde el repositorio al directorio de instalacion..."
 sleep 5
 
-sudo cp "$user_home/Downloads/PsecEntorno/kitty/$ARCHIVO_TXZ" "/opt/kitty/"
+sudo cp "$ARCHIVO_TXZ" "/opt/kitty/"
 if [ $? -ne 0 ]; then
     echo "Error al copiar el archivo $ARCHIVO_TXZ Abortando."
     exit 1
@@ -582,7 +582,7 @@ fi
 echo "Archivo $ARCHIVO_TXZ copiado correctamente al directorio /opt/kitty/."
 sleep 5
 tar xJvf "$ARCHIVO_TXZ" -C "/opt/kitty/"
-rm "$ARCHIVO_TXZ"
+#rm "$ARCHIVO_TXZ"
 
 # Instalamos fzf para el usuario no privilegiado
 cd "$user_home"
@@ -642,14 +642,14 @@ fi
 echo "Copiando el archivo $ARCHIVO_TARGZ desde el repositorio al directorio de instalacion..."
 sleep 5
 
-sudo cp "$user_home/Downloads/PsecEntorno/neovim/$ARCHIVO_TARGZ" "/opt/nvim/"
+sudo cp "$ARCHIVO_TARGZ" "/opt/nvim/"
 if [ $? -ne 0 ]; then
     echo "Error al copiar el archivo $ARCHIVO_TARGZ Abortando."
     exit 1
 fi
 echo "Archivo $ARCHIVO_TARGZ copiado correctamente al directorio /opt/nvim/."
 tar xJvf "$ARCHIVO_TARGZ" -C "/opt/nvim/"
-rm "$ARCHIVO_TARGZ"
+#rm "$ARCHIVO_TARGZ"
 
 # Copiar el archivo init.lua del repositorio al directorio home del usuario no privilegiado
 sudo -u $SUDO_USER cp "$user_home/Downloads/PsecEntorno/neovim/init.lua" "$user_home/.config/nvim"
