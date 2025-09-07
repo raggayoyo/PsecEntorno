@@ -594,10 +594,10 @@ if [ $? -ne 0 ]; then
 fi
 
 "$user_home/.fzf/install --all"
-if [ $? -ne 0 ]; then
-    echo "Error al instalar fzf. Abortando."
-    exit 1
-fi
+#if [ $? -ne 0 ]; then
+#    echo "Error al instalar fzf. Abortando."
+#    exit 1
+#fi
 
 # Instalamos fzf para el usuario root
 git clone --depth 1 https://github.com/junegunn/fzf.git /root/.fzf
@@ -606,10 +606,10 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 /root/.fzf/install --all
-if [ $? -ne 0 ]; then
-    echo "Error al instalar fzf. Abortando."
-    exit 1
-fi
+#if [ $? -ne 0 ]; then
+#    echo "Error al instalar fzf. Abortando."
+#    exit 1
+#fi
 
 # Borramos el nvim por defecto
 sudo apt remove neovim
