@@ -124,7 +124,7 @@ sudo apt install meson libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0
 
 sleep 5
 
-sudo apt install libxcb-util-dev libegl-dev libgl-dev libepoxy-dev ninja-build -y
+sudo apt install libxcb-util-dev libxcb-util-dev libegl-dev libgl-dev libepoxy-dev ninja-build -y
 
 sleep 5
 
@@ -209,7 +209,7 @@ sleep 5
 
 # Instalar complementos de Zsh
 echo "Instalando complementos de Zsh: zsh-autosuggestions y zsh-syntax-highlighting..."
-sudo apt install zsh-autoautocomplete zsh-autosuggestions zsh-syntax-highlighting -y
+sudo apt install zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting -y
 if [ $? -ne 0 ]; then
     echo "Error al instalar los complementos de Zsh. Abortando."
     exit 1
