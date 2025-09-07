@@ -582,7 +582,8 @@ fi
 echo "Archivo $ARCHIVO_TXZ copiado correctamente al directorio /opt/kitty/."
 sleep 5
 tar xJvf "$ARCHIVO_TXZ" -C "/opt/kitty/"
-#rm "$ARCHIVO_TXZ"
+NOMBRE_ARCHIVOTXZ="${ARCHIVO_TXZ##*/}"
+rm "/opt/kitty/$NOMBRE_ARCHIVOTXZ"
 
 # Instalamos fzf para el usuario no privilegiado
 cd "$user_home"
@@ -649,7 +650,8 @@ if [ $? -ne 0 ]; then
 fi
 echo "Archivo $ARCHIVO_TARGZ copiado correctamente al directorio /opt/nvim/."
 tar xJvf "$ARCHIVO_TARGZ" -C "/opt/nvim/"
-#rm "$ARCHIVO_TARGZ"
+NOMBRE_ARCHIVOTARGZ="${ARCHIVO_TARGZ##*/}"
+rm "/opt/kitty/$NOMBRE_ARCHIVOTARGZ"
 
 # Copiar el archivo init.lua del repositorio al directorio home del usuario no privilegiado
 sudo -u $SUDO_USER cp "$user_home/Downloads/PsecEntorno/neovim/init.lua" "$user_home/.config/nvim"
