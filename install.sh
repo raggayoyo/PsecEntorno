@@ -655,13 +655,13 @@ fi
 echo "Archivo init.lua copiado correctamente al directorio home del usuario no privilegiado."
 sleep 5
 
-# Copiar el archivo init.lua del repositorio al directorio home del usuario no privilegiado
+# Copiar el archivo init.lua del repositorio al directorio home del usuario root
 cp "$user_home/Downloads/PsecEntorno/neovim/init.lua" "/root/.config/nvim"
 if [ $? -ne 0 ]; then
     echo "Error al copiar el archivo .init.lua Abortando."
     exit 1
 fi
-echo "Archivo init.lua copiado correctamente al directorio home del usuario no privilegiado."
+echo "Archivo init.lua copiado correctamente al directorio home del usuario root."
 sleep 5
 
 # Instalar locate 
