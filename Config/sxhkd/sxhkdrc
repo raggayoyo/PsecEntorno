@@ -7,7 +7,7 @@ super + Return
 	/usr/bin/kitty
 
 # program launcher
-super + d
+super + r
 	/usr/bin/rofi -show drun
 
 # make sxhkd reload its configuration files:
@@ -97,11 +97,11 @@ super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + space
+super + ctrl + alt + space
 	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + alt + space
+super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
@@ -121,7 +121,7 @@ super + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Custom Resize
-alt + super + {Left,Down,Up,Right}
+super + alt + {Left,Down,Up,Right}
 	$HOME/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
 
 # chromium
