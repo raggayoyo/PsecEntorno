@@ -123,6 +123,11 @@ sleep 5
 sudo apt install meson libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev libxcb-glx0-dev -y
 
 sleep 5
+
+sudo apt install libxcb-util-dev libegl-dev libgl-dev libepoxy-dev ninja-build -y
+
+sleep 5
+
 # Instalar libpcre3 y libpcre3-dev
 echo "Instalando libpcre3 y libpcre3-dev..."
 sudo apt install libpcre3 libpcre3-dev -y
