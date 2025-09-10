@@ -674,6 +674,15 @@ fi
 echo "Archivo init.lua copiado correctamente al directorio home del usuario root."
 sleep 5
 
+sudo -u $SUDO_USER cp "$user_home/Downloads/PsecEntorno/neovim/vimrc" "/etc/vim/"
+if [ $? -ne 0 ]; then
+    echo "Error al copiar el archivo vimrc Abortando."
+    exit 1
+fi
+chown root:root /etc/vim/vimrc
+sudo chmod 644 "/etc/vim/vimrc"
+sleep 5
+
 # Instalar locate 
 echo "Instalando locate..." 
 sudo apt install locate -y 
@@ -697,6 +706,8 @@ cd rofi-themes-collection
 
 sudo -u $SUDO_USER cp -r /opt/rofi-themes-collection/themes/* $user_home/.config/rofi/themes/
 
+# permisos bscp
+chown root:root /usr/local/share/zsh/site-functions/_bspc
 # ... 
 echo "Instalación completada."
 
