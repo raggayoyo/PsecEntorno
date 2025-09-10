@@ -695,11 +695,11 @@ if [ $? -ne 0 ]; then
 fi
 cd rofi-themes-collection
 
-sudo -u $SUDO_USER cp "/opt/rofi-themes-collection/themes/*" "$user_home/.config/rofi/themes/"
+sudo -u $SUDO_USER cp -r /opt/rofi-themes-collection/themes/* $user_home/.config/rofi/themes/
 
 # ... 
 echo "Instalación completada."
 
 # Reiniciar la sesión de usuario
-echo "Reiniciando la sesión de usuario..."
-kill -9 -1
+echo "Reiniciar la VM"
+#kill -9 -1
