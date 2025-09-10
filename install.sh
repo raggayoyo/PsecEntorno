@@ -653,8 +653,8 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 echo "Archivo $ARCHIVO_TARGZ copiado correctamente al directorio /opt/nvim/."
-tar xJvf "/opt/kitty/$NOMBRE_ARCHIVOTARGZ" -C "/opt/nvim/"
-rm "/opt/kitty/$NOMBRE_ARCHIVOTARGZ"
+tar xJvf "/opt/nvim/$NOMBRE_ARCHIVOTARGZ" -C "/opt/nvim/"
+rm "/opt/nvim/$NOMBRE_ARCHIVOTARGZ"
 
 # Copiar el archivo init.lua del repositorio al directorio home del usuario no privilegiado
 sudo -u $SUDO_USER cp "$user_home/Downloads/PsecEntorno/neovim/init.lua" "$user_home/.config/nvim"
