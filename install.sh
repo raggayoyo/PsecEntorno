@@ -565,27 +565,27 @@ sudo chmod 755 "/opt/kitty"
 sudo apt remove kitty -y
 
 # Verificando la version del archivo kitty
-read -r ARCHIVO_TXZ < <(find "$user_home/Downloads/PsecEntorno/kitty" -maxdepth 1 -name "*.txz" -print -quit)
+read -r KittyCompress < <(find "$user_home/Downloads/PsecEntorno/kitty" -maxdepth 1 -name "*.txz" -print -quit)
 
 # Verifica si se encontró un archivo.
-if [ -z "$ARCHIVO_TXZ" ]; then
+if [ -z "$KittyCompress" ]; then
     echo "Error: No se encontró ningún archivo .txz en el directorio $user_home/Downloads/PsecEntorno/kitty"
     exit 1
 fi
 
-echo "Copiando el archivo $ARCHIVO_TXZ desde el repositorio al directorio de instalacion..."
+echo "Copiando el archivo $KittyCompress desde el repositorio al directorio de instalacion..."
 sleep 5
 
-#sudo cp "$ARCHIVO_TXZ" "/opt/kitty/"
+#sudo cp "$KittyCompress" "/opt/kitty/"
 #if [ $? -ne 0 ]; then
-#    echo "Error al copiar el archivo $ARCHIVO_TXZ Abortando."
+#    echo "Error al copiar el archivo $KittyCompress Abortando."
 #    exit 1
 #fi
 
-echo "Decomprimiendo $ARCHIVO_TXZ al directorio /opt/kitty/."
+echo "Decomprimiendo $KittyCompress al directorio /opt/kitty/."
 sleep 5
-tar xJvf "$ARCHIVO_TXZ" -C "/opt/kitty/"
-#NOMBRE_ARCHIVOTXZ="${ARCHIVO_TXZ##*/}"
+tar xJvf "$KittyCompress" -C "/opt/kitty/"
+#NOMBRE_ARCHIVOTXZ="${KittyCompress##*/}"
 #rm "/opt/kitty/$NOMBRE_ARCHIVOTXZ"
 
 # Instalamos fzf para el usuario no privilegiado
@@ -635,25 +635,25 @@ mkdir -p "/opt/nvim"
 sudo chmod 755 "/opt/nvim"
 
 # Verificando la version del archivo nvim
-read -r ARCHIVO_TARGZ < <(find "$user_home/Downloads/PsecEntorno/neovim" -maxdepth 1 -name "*.tar.gz" -print -quit)
+read -r NVIMCompress < <(find "$user_home/Downloads/PsecEntorno/neovim" -maxdepth 1 -name "*.tar.gz" -print -quit)
 
 # Verifica si se encontró un archivo.
-if [ -z "$ARCHIVO_TARGZ" ]; then
+if [ -z "$NVIMCompress" ]; then
     echo "Error: No se encontró ningún archivo .tar.gz en el directorio $user_home/Downloads/PsecEntorno/neovim"
     exit 1
 fi
 
-echo "Copiando el archivo $ARCHIVO_TARGZ desde el repositorio al directorio de instalacion..."
+echo "Copiando el archivo $NVIMCompress desde el repositorio al directorio de instalacion..."
 sleep 5
 
-#sudo cp "$ARCHIVO_TARGZ" "/opt/nvim/"
+#sudo cp "$NVIMCompress" "/opt/nvim/"
 #if [ $? -ne 0 ]; then
-#    echo "Error al copiar el archivo $ARCHIVO_TARGZ Abortando."
+#    echo "Error al copiar el archivo $NVIMCompress Abortando."
 #    exit 1
 #fi
-echo "Decomprimiendo $ARCHIVO_TARGZ al directorio /opt/nvim/."
-tar xJvf "$ARCHIVO_TARGZ" -C "/opt/nvim/"
-#NOMBRE_ARCHIVOTARGZ="${ARCHIVO_TARGZ##*/}"
+echo "Decomprimiendo $NVIMCompress al directorio /opt/nvim/."
+tar xzvf "$NVIMCompress" -C "/opt/nvim/"
+#NOMBRE_ARCHIVOTARGZ="${NVIMCompress##*/}"
 #rm "/opt/kitty/$NOMBRE_ARCHIVOTARGZ"
 
 # Copiar el archivo init.lua del repositorio al directorio home del usuario no privilegiado
