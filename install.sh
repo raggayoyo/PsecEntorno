@@ -73,7 +73,7 @@ fi
 sleep 5
 
 # Instalar kitty 
-echo "Instalando kitty..." 
+echo "Instalando kitty con apt..." 
 sudo apt install kitty -y 
 if [ $? -ne 0 ]; then 
 	echo "Error al instalar kitty. Abortando." 
@@ -561,6 +561,9 @@ export TERM=xterm-256color
 mkdir -p "/opt/kitty"
 sudo chmod 755 "/opt/kitty"
 
+# Borramos el kitty por defecto
+sudo apt remove kitty -y
+
 # Verificando la version del archivo kitty
 read -r ARCHIVO_TXZ < <(find "$user_home/Downloads/PsecEntorno/kitty" -maxdepth 1 -name "*.txz" -print -quit)
 
@@ -612,7 +615,7 @@ fi
 #fi
 
 # Borramos el nvim por defecto
-sudo apt remove neovim
+sudo apt remove neovim -y
 # Clonamos el repositorio de NvChad para el usuario no privilegiado
 sudo -u $SUDO_USER git clone https://github.com/NvChad/starter "$user_home/.config/nvim"
 if [ $? -ne 0 ]; then
