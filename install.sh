@@ -577,12 +577,12 @@ echo "Copiando el archivo $ARCHIVO_TXZ desde el repositorio al directorio de ins
 sleep 5
 
 #sudo cp "$ARCHIVO_TXZ" "/opt/kitty/"
-if [ $? -ne 0 ]; then
-    echo "Error al copiar el archivo $ARCHIVO_TXZ Abortando."
-    exit 1
-fi
+#if [ $? -ne 0 ]; then
+#    echo "Error al copiar el archivo $ARCHIVO_TXZ Abortando."
+#    exit 1
+#fi
 
-echo "Archivo $ARCHIVO_TXZ copiado correctamente al directorio /opt/kitty/."
+echo "Decomprimiendo $ARCHIVO_TXZ al directorio /opt/kitty/."
 sleep 5
 tar xJvf "$ARCHIVO_TXZ" -C "/opt/kitty/"
 #NOMBRE_ARCHIVOTXZ="${ARCHIVO_TXZ##*/}"
@@ -647,11 +647,11 @@ echo "Copiando el archivo $ARCHIVO_TARGZ desde el repositorio al directorio de i
 sleep 5
 
 #sudo cp "$ARCHIVO_TARGZ" "/opt/nvim/"
-if [ $? -ne 0 ]; then
-    echo "Error al copiar el archivo $ARCHIVO_TARGZ Abortando."
-    exit 1
-fi
-echo "Archivo $ARCHIVO_TARGZ copiado correctamente al directorio /opt/nvim/."
+#if [ $? -ne 0 ]; then
+#    echo "Error al copiar el archivo $ARCHIVO_TARGZ Abortando."
+#    exit 1
+#fi
+echo "Decomprimiendo $ARCHIVO_TARGZ al directorio /opt/nvim/."
 tar xJvf "$ARCHIVO_TARGZ" -C "/opt/nvim/"
 #NOMBRE_ARCHIVOTARGZ="${ARCHIVO_TARGZ##*/}"
 #rm "/opt/kitty/$NOMBRE_ARCHIVOTARGZ"
