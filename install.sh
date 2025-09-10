@@ -675,7 +675,7 @@ echo "Archivo init.lua copiado correctamente al directorio home del usuario root
 sleep 5
 
 
-sudo -u $SUDO_USER cp "$user_home/Downloads/PsecEntorno/neovim/vimrc" "/etc/vim/"
+sudo -u $SUDO_USER cp -f "$user_home/Downloads/PsecEntorno/neovim/vimrc" "/etc/vim/"
 
 if [ $? -ne 0 ]; then
     echo "Error al copiar el archivo vimrc Abortando."
