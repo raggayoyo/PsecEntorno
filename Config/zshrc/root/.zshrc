@@ -108,7 +108,8 @@ SYSTEM_PATHS=(
     "$HOME/go/bin"
     "$HOME/go/bin"
     "/root/go/bin"
-    "/opt/nvim/nvim-linux64/bin"
+    "/opt/kitty/bin"
+    "/opt/nvim/nvim-linux-x86_64/bin"
     "/usr/local/sbin"
     "/usr/local/bin"
     "/usr/sbin"
@@ -367,6 +368,8 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+alias vim='nvim'
+alias sudo='sudo '
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then

@@ -694,6 +694,8 @@ if [ $? -ne 0 ]; then
 fi
 
 sleep 5
+sudo umount '/run/user/1000/gvfs'
+sudo umount '/run/user/1000/doc'
 sudo updatedb
 
 cd "$user_home/.config"
@@ -716,3 +718,4 @@ echo "Instalación completada."
 # Reiniciar la sesión de usuario
 echo "Reiniciar la VM"
 #kill -9 -1
+#para usar nvim con sudo colocar /opt/nvim/nvim-linux-x86_64/bin en secure_path de sudoers
