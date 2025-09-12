@@ -7,3 +7,4 @@ if [ "$IFACE" = "tun0" ]; then
 else
     echo "Disconnected"
 fi
+

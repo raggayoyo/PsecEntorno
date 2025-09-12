@@ -8,3 +8,4 @@ if [ $ip_address ] && [ $machine_name ]; then
 else
     echo "No target"
 fi
+
